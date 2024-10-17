@@ -1,0 +1,9 @@
+{
+  "layout": "page",
+  "permalink": "/{{ page.fileSlug }}/",
+  "eleventyComputed": {
+    "eleventyNavigation": {
+      "key": "{{title}}"
+    }
+  }
+}
