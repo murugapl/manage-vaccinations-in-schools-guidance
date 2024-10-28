@@ -1,11 +1,9 @@
 ---
 layout: home
 title: Service guidance
-description: How to use the service.
+description: A guide on how to use Mavis.
 ---
 
-{{ serviceName }} (Mavis) allows you to record vaccinations in school.
+{{ serviceName }} (Mavis) is used to manage vaccinations in schools.
 
-The service only records data. You have control over clinical judgements or decisions.
-
-To access the service, visit [www.mavis.england.nhs.uk](https://www.mavis.england.nhs.uk).
+We want this guide to be as useful as possible. If you think anything could be improved, please send your suggestions to <england.mavis@nhs.net>.
