@@ -98,3 +98,48 @@
     }
   }
 }
+
+// Email template
+.app-email {
+  @include nhsuk-responsive-padding(7);
+  background-color: $color_nhsuk-white;
+  border: 1px solid $nhsuk-border-color;
+  font-family: Helvetica, Arial, sans-serif;
+
+  &__header {
+    @include nhsuk-font($size: 16);
+    border-bottom: 1px solid $nhsuk-border-color;
+    margin-bottom: nhsuk-spacing(4);
+    padding-bottom: nhsuk-spacing(3);
+  }
+
+  &__subject {
+    @include nhsuk-font($size: 19, $weight: bold);
+  }
+
+  .nhsuk-logo {
+    color: $color_nhsuk-blue;
+    margin-bottom: nhsuk-spacing(4);
+  }
+
+  mark {
+    background: $nhsuk-focus-color;
+    color: $nhsuk-focus-text-color;
+    display: inline;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    border-radius: 0.5em 0.5em 0.2em 0.2em;
+    box-shadow:
+      inset 0.5em 0 0 0 $color_nhsuk-white,
+      inset -0.5em 0 0 0 $color_nhsuk-white,
+      inset 0 0.2em 0 0 $color_nhsuk-white;
+
+    &::before {
+      content: "((";
+    }
+
+    &::after {
+      content: "))";
+    }
+  }
+}

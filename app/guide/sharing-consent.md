@@ -9,8 +9,8 @@ eleventyComputed:
 
 If schools haven’t provided parents’ contact details, they’ll need to send out consent requests and consent reminders that you’ve provided them with.
 
-- [Copy of consent request](#)
-- [Copy of consent reminder](#)
+- [Copy of consent request email](/consent-request-email)
+- [Copy of consent reminder email](/consent-reminder-email)
 
 You will need to add the correct dates and URL for the consent form yourselves. **This URL is different for every school.**
 
