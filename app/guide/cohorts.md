@@ -11,6 +11,11 @@ eleventyComputed:
 
 ## Creating the initial cohort list (year 8 to 11)
 
+{% from "inset-text/macro.njk" import insetText %}
+{{ insetText({
+  html: "You should upload cohort records before you upload vaccination records or class lists."
+}) }}
+
 Cohort records can be uploaded in [this template](#). You should include all the year 8, 9, 10 and 11 children in your area, whether they have already been vaccinated or not.
 
 Make sure the cohort records are in the format shown in the template above. Files need to be in .csv format. Records can be all in one file, or split across multiple files; Mavis is not picky about this. If you have an excel file with multiple tabs, you will need to consolidate this into a single tab or create a separate CSV file for each tab.
