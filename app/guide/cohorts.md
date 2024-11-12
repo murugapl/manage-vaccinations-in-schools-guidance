@@ -1,7 +1,7 @@
 ---
 title: Managing the cohort
 group: Setup
-order: 11
+order: 12
 eleventyComputed:
   eleventyNavigation:
     key: Managing cohorts
