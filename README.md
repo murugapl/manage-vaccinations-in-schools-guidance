@@ -2,7 +2,7 @@
 
 This website hosts guidance for the Manage vaccinations in schools service.
 
-~~The website can be found at [guide.mavis.england.nhs.uk](https://guide.mavis.england.nhs.uk)~~.
+The website can be found at [guide.manage-vaccinations-in-schools.nhs.uk](https://guide.manage-vaccinations-in-schools.nhs.uk).
 
 Content lives within the [app](./app) folder as Markdown files.
 
