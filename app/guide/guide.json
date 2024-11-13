@@ -1,6 +1,7 @@
 {
-  "layout": "page",
-  "permalink": "/{{ page.fileSlug }}/",
+  "layout": "guide",
+  "permalink": "/guide/{{ page.fileSlug }}/",
+  "sectionName": "User guide",
   "eleventyComputed": {
     "eleventyNavigation": {
       "key": "{{title}}"

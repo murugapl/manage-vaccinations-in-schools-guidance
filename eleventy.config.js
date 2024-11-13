@@ -59,6 +59,11 @@ export default function (eleventyConfig) {
       return a.data.order - b.data.order
     })
   })
+  eleventyConfig.addCollection('video', (collection) => {
+    return collection.getFilteredByGlob('app/video/*.md').sort((a, b) => {
+      return a.data.order - b.data.order
+    })
+  })
 
   // Global data
   eleventyConfig.addGlobalData('serviceName', 'Manage vaccinations in schools')

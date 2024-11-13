@@ -42,6 +42,22 @@
   padding-top: nhsuk-spacing(3);
 }
 
+// Video embeds
+.app-video {
+  @include nhsuk-responsive-margin(4, "bottom");
+  aspect-ratio: 16 / 9;
+  background-color: $color_nhsuk-grey-1;
+  border-bottom: 1px solid $color_nhsuk-grey-4;
+  padding: nhsuk-spacing(1) nhsuk-spacing(2);
+}
+
+.app-video__iframe {
+  border: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
 // Side navigation
 .app-side-nav {
   @include nhsuk-responsive-margin(7, "bottom");
