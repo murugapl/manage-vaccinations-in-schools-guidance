@@ -16,7 +16,16 @@ eleventyComputed:
   html: "You should upload cohort records before you upload vaccination records or class lists."
 }) }}
 
-Cohort records can be uploaded in [this template](#). You should include all the year 8, 9, 10 and 11 children in your area, whether they have already been vaccinated or not.
+Cohort records can be uploaded using the following template:
+
+{% from "attachment/macro.njk" import attachment %}
+{{ attachment({
+  text: "Cohort import template",
+  summary: "Microsoft Excel spreadsheet, 18 KB",
+  href: "/files/cohort-import-template.xlsx"
+}) }}
+
+You should include all the year 8, 9, 10 and 11 children in your area, whether they have already been vaccinated or not.
 
 Make sure the cohort records are in the format shown in the template above. Files need to be in .csv format. Records can be all in one file, or split across multiple files; Mavis is not picky about this. If you have an excel file with multiple tabs, you will need to consolidate this into a single tab or create a separate CSV file for each tab.
 
@@ -48,7 +57,7 @@ Once you have uploaded all the cohort files, you can go to the **Cohorts** tab a
 
 ## Importing historic vaccination records (year 9, 10 and 11)
 
-Vaccination records can be uploaded in the same format as uploads to NIVS, which uses [this template](#). You should upload all vaccination records from the last 3 years.
+When you’re uploading vaccination records, use the same template you’d use for NIVS. You should upload all vaccination records from the last 3 years.
 
 You should also include vaccination records for anyone in the current cohort who was vaccinated elsewhere, if you have them. These records will be stored in Mavis and won’t be sent anywhere else.
 
@@ -81,7 +90,15 @@ If there are some parts of each that are correct, you can note down any correct 
 
 ## Uploading class lists
 
-Class lists can be uploaded in [this template](#). Class lists for each school are uploaded separately, and each school can only have one class list.
+Class lists can be uploaded using the following template:
+
+{{ attachment({
+  text: "Class list import template",
+  summary: "Microsoft Excel spreadsheet, 17 KB",
+  href: "/files/class-list-import-template.xlsx"
+}) }}
+
+Class lists for each school are uploaded separately, and each school can only have one class list.
 
 The class list must contain the entire cohort for that school, otherwise any children not listed will be removed from the school on Mavis (and recorded as school unknown).
 

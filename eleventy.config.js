@@ -73,6 +73,7 @@ export default function (eleventyConfig) {
     'node_modules/nhsuk-frontend/packages/assets': 'assets'
   })
   eleventyConfig.addPassthroughCopy('app/assets/images')
+  eleventyConfig.addPassthroughCopy('app/files')
 
   return {
     dataTemplateEngine: 'njk',
