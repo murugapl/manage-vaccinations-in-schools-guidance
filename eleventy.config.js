@@ -1,5 +1,4 @@
 import path from 'node:path'
-import process from 'node:process'
 import {
   EleventyHtmlBasePlugin,
   InputPathToUrlTransformPlugin
@@ -24,7 +23,8 @@ export default function (eleventyConfig) {
     new Nunjucks.FileSystemLoader([
       './node_modules/nhsuk-frontend/packages/components',
       './node_modules/nhsuk-frontend/packages/macros',
-      'app/_layouts'
+      'app/_layouts',
+      'app/_includes'
     ])
   )
 

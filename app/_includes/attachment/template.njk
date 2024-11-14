@@ -1,0 +1,15 @@
+{% from "attributes.njk" import nhsukAttributes %}
+
+<div class="app-attachment">
+  <a class="app-attachment__link
+  {%- if params.classes %} {{ params.classes }}{% endif %}" href="
+  {{ params.href }}" download {{- nhsukAttributes(params.attributes) }}>
+    <svg class="nhsuk-icon app-icon__file" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+      <path d="M21 1v22a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6.414a1 1 0 0 1 .293-.707L8.707.293A1 1 0 0 1 9.414 0H20a1 1 0 0 1 1 1Zm-2 1h-9v5H5v15h14V2Z"/>
+    </svg>
+    <span class="app-attachment__text">{{ params.text }}</span>
+  </a>
+  {% if params.summary -%}
+  <br><span class="app-attachment__summary">{{ params.summary }}</span>
+  {%- endif %}
+</div>
