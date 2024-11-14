@@ -13,10 +13,10 @@ homepage: true
   href: "/guide/organisation-settings"
 }) }}
 
-{{ actionLink({
-  text: "Training videos",
-  href: "/video/nurses"
-}) }}
+{# actionLink({
+text: "Training videos",
+href: "/video/nurses"
+}) #}
 
 To access the service, visit [www.manage-vaccinations-in-schools.nhs.uk](https://www.manage-vaccinations-in-schools.nhs.uk).
 
