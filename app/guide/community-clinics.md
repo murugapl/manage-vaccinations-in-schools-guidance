@@ -8,7 +8,7 @@ Children will be added to the cohort for community clinics if:
 
 - they are shown as being homeschooled in the nominal roll
 - their school is unknown
-- they don't receive a vaccination in school
+- they don’t receive a vaccination in school
 
 ## Scheduling community clinics
 
@@ -30,9 +30,9 @@ To add or amend dates for community clinics:
 
 ## Inviting parents to book slots
 
-Once a child is added to the cohort for community clinics, their parent or guardian will receive an email (and potentially a text) inviting them to book a clinic slot through your local booking system. 
+Once a child is added to the cohort for community clinics, their parent or guardian will receive an email (and potentially a text) inviting them to book a clinic slot through your local booking system.
 
-This email will either go out: 
+This email will either go out:
 
 - three weeks before the date of the first clinic scheduled, or
 - at 9am the day after the child is added to the community clinics cohort, if this happens less than three weeks before the date of the first clinic.

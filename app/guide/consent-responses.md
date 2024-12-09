@@ -55,5 +55,5 @@ Mavis lets you review consent responses for each session.
 1. From the **Check consent responses** page, go into the **Conflicts** tab.
 2. If you click on the child’s record and scroll down, you’ll see who has said what in their consent responses.
 3. Click on the name of the parent who refused.
-4. You can either mark that response as invalid (exercise caution here), or you can follow-up with the parent by returning to the child's record to see the parent’s contact details.
+4. You can either mark that response as invalid (exercise caution here), or you can follow-up with the parent by returning to the child’s record to see the parent’s contact details.
 5. When speaking to the refuser, if they now give consent, you’ll need to go through the "Get consent response" flow over the phone.
