@@ -1,6 +1,6 @@
 import asyncio
 import json
-import datetime
+import tqdm
 import os
 from playwright.async_api import async_playwright
 
@@ -16,45 +16,41 @@ async def login(page, username: str, password: str):
     await page.get_by_role("heading", name="SAIS Organisation 1 (R1L)").click()
     await page.wait_for_url("**/dashboard", timeout=1000)
 
-async def take_screenshot(page, url: str, step_id: str, description: str, output_file: str):
+async def take_screenshot(page, url: str, output_file: str):
     await page.goto(url)
     await page.screenshot(path=output_file)
-    metadata = {
-        "id": step_id,
-        "url": url,
-        "image": output_file,
-        "description": description,
-        # "timestamp": datetime.datetime.utcnow().isoformat() + "Z"
-    }
-    return metadata
 
 async def main():
     username = "nurse.joy@example.com"
     password = "nurse.joy@example.com"
-    target_url = "http://127.0.0.1:4000/programmes/hpv/vaccination-records"
-    step_id = "vaccination-reccords"
-    description = "Target page after login"
-    output_file = "screenshots/step-1.png"
+    base_url = "http://127.0.0.1:4000/"
+    
+    dynamic_screenshots_dir = os.path.dirname(__file__)
+    os.makedirs(os.path.join(dynamic_screenshots_dir,"screenshots"), exist_ok=True)
 
-    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    metadata_file = os.path.join(dynamic_screenshots_dir, "images.json")
 
-    async with async_playwright() as p:
-        browser = await p.chromium.launch()  # Set headless=True as needed
-        context = await browser.new_context(viewport={"width": 1920, "height": 1080})
-        page = await context.new_page()
-        
-        # Login to the application
-        await login(page, username, password)
-        
-        # After login, navigate to the target URL and capture the screenshot.
-        metadata = await take_screenshot(page, target_url, step_id, description, output_file)
-        
-        await browser.close()
+    with open(metadata_file) as data:
+        image_metadata = json.load(data)
 
-        #   Save the metadata to a JSON file.
-        with open("metadata.json", "w") as f:
-            json.dump(metadata, f, indent=4)
-        print("Logged in, captured screenshot, and saved metadata.")
+    for image in image_metadata:
+        print(f"Capturing screenshot: {image['image_name']}")
+        target_url = base_url + image["url_extension"]
+        output_file = f"{dynamic_screenshots_dir}/screenshots/{image['image_name']}"
+
+        async with async_playwright() as p:
+            browser = await p.chromium.launch()  # Set headless=True as needed
+            context = await browser.new_context(viewport={"width": image["screen_size"]["width"], "height": image["screen_size"]["height"]})
+            page = await context.new_page()
+            
+            # Login to the application
+            await login(page, username, password)
+            
+            # After login, navigate to the target URL and capture the screenshot.
+            await take_screenshot(page, target_url, output_file)
+            
+            await browser.close()
+    print("Done")
 
 if __name__ == "__main__":
     asyncio.run(main())
