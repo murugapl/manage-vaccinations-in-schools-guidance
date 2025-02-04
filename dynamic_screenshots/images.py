@@ -67,15 +67,75 @@ IMAGES = [
     #     },
     #     "further_processing": process_consent_matching
     # },
+    # {
+    #     "description": "Screenshot of selecting paper as the response method.",
+    #     "image_name": "consent-response-paper.png",
+    #     "url_extension": "sessions/1/consents/given",
+    #     "screen_size": {    
+    #         "width": 700,
+    #         "height": 1080
+    #     },
+    #     "further_processing": process_get_consent
+    # },
+    # {
+    #     "description": "Screenshot of a list of unmatched consent responses.",      
+    #     "image_name": "consent-unmatched.png",
+    #     "url_extension": "consent-forms",
+    #     "screen_size": {    
+    #         "width": 1500,
+    #         "height": 1080
+    #     },
+    # },
+    # {
+    #     "description": "Screenshot of important notices page.",       #ask about how to create notices
+    #     "image_name": "notices.png",
+    #     "url_extension": "notices",
+    #     "screen_size": {    
+    #         "width": 1500,
+    #         "height": 1080
+    #     },
+    #     "login": {
+    #         "username": "superuser@example.com",
+    #         "password": "superuser@example.com"
+    #     }
+    # },
+    # {
+    #     "description": "Screenshot of important notices page.",       #screenshotting excel?
+    #     "image_name": "offline-spreadsheet.png",
+    #     "screen_size": {    
+    #         "width": 1500,
+    #         "height": 1080
+    #     },
+    # },
     {
-        "description": "Screenshot of a potential match for an unmatched consent response.",
-        "image_name": "consent-response-paper.png",
-        "url_extension": "sessions/1/consents/given",
+        "description": "Screenshot of the offline recording spreadsheet.",       #not used anywhere in the guide
+        "image_name": "organisation.png",
+        "url_extension": "organisation",
         "screen_size": {    
-            "width": 700,
+            "width": 1150,
             "height": 1080
         },
-        "further_processing": process_get_consent
+        "full_page": True
+    },
+    {
+        "description": "Screenshot of programme cohorts tab.",       
+        "image_name": "programme-cohorts.png",
+        "url_extension": "programmes/hpv/cohorts",
+        "screen_size": {    
+            "width": 1300,
+            "height": 100
+        },
+        "full_page": True
+    },
+    {
+        "description": "Screenshot of the programme overview page",     
+        "image_name": "programme-overview.png",
+        "url_extension": "programmes/hpv",
+        "screen_size": {    
+            "width": 1200,
+            "height": 900
+        },
+        "full_page": True
     }
 ]
 

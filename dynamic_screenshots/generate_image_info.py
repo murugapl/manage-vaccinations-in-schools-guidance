@@ -1,6 +1,7 @@
 import asyncio
 import os
 from playwright.async_api import async_playwright
+from utils import find_body_box, find_body_height, find_footer_height, remove_footer
 from images import IMAGES
 
 async def login(page, username: str, password: str):
@@ -39,6 +40,9 @@ async def main():
             page = await context.new_page()
             
             # Login to the application
+            if "login" in image.keys():
+                username = image["login"]["username"]
+                password = image["login"]["password"]
             await login(page, username, password)
             
             # After login, navigate to the target URL and capture the screenshot.
@@ -46,7 +50,12 @@ async def main():
             if "further_processing" in image.keys():
                 await image["further_processing"](page, output_file)
             else:
-                await page.screenshot(path=output_file)
+                full_page = image["full_page"] if "full_page" in image.keys() else False
+                if full_page:
+                    body_box = await remove_footer(page)
+                else:
+                    body_box = None
+                await page.screenshot(path=output_file, full_page=full_page, clip=body_box)
             
             await browser.close()
     print("Done")
