@@ -1,8 +1,7 @@
 import asyncio
-import json
-import tqdm
 import os
 from playwright.async_api import async_playwright
+from images import IMAGES
 
 async def login(page, username: str, password: str):
     # Replace with your app's login URL and adjust selectors as needed.
@@ -16,9 +15,6 @@ async def login(page, username: str, password: str):
     await page.get_by_role("heading", name="SAIS Organisation 1 (R1L)").click()
     await page.wait_for_url("**/dashboard", timeout=1000)
 
-async def take_screenshot(page, url: str, output_file: str):
-    await page.goto(url)
-    await page.screenshot(path=output_file)
 
 async def main():
     username = "nurse.joy@example.com"
@@ -30,8 +26,7 @@ async def main():
 
     metadata_file = os.path.join(dynamic_screenshots_dir, "images.json")
 
-    with open(metadata_file) as data:
-        image_metadata = json.load(data)
+    image_metadata = IMAGES
 
     for image in image_metadata:
         print(f"Capturing screenshot: {image['image_name']}")
@@ -47,7 +42,11 @@ async def main():
             await login(page, username, password)
             
             # After login, navigate to the target URL and capture the screenshot.
-            await take_screenshot(page, target_url, output_file)
+            await page.goto(target_url)
+            if "further_processing" in image.keys():
+                await image["further_processing"](page, output_file)
+            else:
+                await page.screenshot(path=output_file)
             
             await browser.close()
     print("Done")
