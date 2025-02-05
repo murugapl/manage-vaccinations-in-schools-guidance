@@ -6,3 +6,5 @@ _site
 
 screenshots
 __pycache__
+
+.venv
