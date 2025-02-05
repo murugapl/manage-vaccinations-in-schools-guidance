@@ -1,7 +1,8 @@
 import asyncio
 import os
 from playwright.async_api import async_playwright
-from utils import find_body_box, find_body_height, find_footer_height, remove_footer
+from tqdm import tqdm
+from utils import remove_footer
 from images import IMAGES
 
 async def login(page, username: str, password: str):
@@ -29,14 +30,20 @@ async def main():
 
     image_metadata = IMAGES
 
-    for image in image_metadata:
+    for image in tqdm(image_metadata):
         print(f"Capturing screenshot: {image['image_name']}")
         target_url = base_url + image["url_extension"]
         output_file = f"{dynamic_screenshots_dir}/screenshots/{image['image_name']}"
 
+        full_page = image["full_page"] if "full_page" in image.keys() else False
+
         async with async_playwright() as p:
+            image
             browser = await p.chromium.launch()  # Set headless=True as needed
-            context = await browser.new_context(viewport={"width": image["screen_size"]["width"], "height": image["screen_size"]["height"]})
+            context = await browser.new_context(viewport={
+                "width": image["screen_size"]["width"], 
+                "height": 100 if full_page else image["screen_size"]["height"]
+            })
             page = await context.new_page()
             
             # Login to the application
@@ -50,7 +57,6 @@ async def main():
             if "further_processing" in image.keys():
                 await image["further_processing"](page, output_file)
             else:
-                full_page = image["full_page"] if "full_page" in image.keys() else False
                 if full_page:
                     body_box = await remove_footer(page)
                 else:

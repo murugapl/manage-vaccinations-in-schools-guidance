@@ -1,91 +1,36 @@
-import time
-from utils import add_margins
-
-
-async def process_consent_matching(page, output_file):
-    child_key = page.get_by_text("Child", exact=True)
-    child_row = child_key.locator("..")
-    child_value = await child_row.locator("dd").inner_text()
-    await page.get_by_label("Name", exact=True).fill(child_value)
-    time.sleep(0.5)
-    await page.get_by_role("link", name="Select").click()
-
-    title_key = page.get_by_text(" Link consent response with child record? ")
-    title_box = await title_key.element_handle()
-    title_box = await title_box.bounding_box()
-    title_height = title_box["height"]+24
-
-    details_key = page.get_by_text(" Compare details ", exact=True)
-    details_box = await details_key.locator("..").element_handle()
-    details_box = await details_box.bounding_box()
-
-    details_box["height"] += title_height
-    details_box["y"] -= title_height
-
-    details_box = add_margins(details_box, 16)
-
-    await page.screenshot(path=output_file, clip=details_box, full_page=True)
-
-async def process_get_consent(page, output_file):
-    child_links = await page.get_by_text("Full name", exact=True).all()
-    child_link = child_links[-1]
-    parent = child_link.locator("..")
-    await parent.locator("a").click()
-
-    await page.get_by_role("button", name="Get consent response").click()
-    radio_buttons = await page.locator("[type='radio']").all()
-    await radio_buttons[0].check()   
-    await page.get_by_role("button", name="Continue").click()
-    await page.get_by_role("button", name="Continue").click()
-
-    details_key = page.get_by_role("main")
-    details_box = await details_key.element_handle()
-    details_box = await details_box.bounding_box()
-
-    details_box = add_margins(details_box, 5)
-
-    await page.screenshot(path=output_file, clip=details_box, full_page=True)
+from process_images import process_consent_matching, process_get_consent, process_get_gillick_competent_consent, process_pre_screening, process_sessions_add_dates
 
 
 IMAGES = [
-    # {
-    #     "description": "Screenshot of a register attendance page.",
-    #     "image_name": "session-attendance.png",
-    #     "url_extension": "sessions/1/attendances/unregistered?sort=name&direction=asc",
-    #     "screen_size": {    
-    #         "width": 1100,
-    #         "height": 1080
-    #     }
-    # },
-    # {
-    #     "description": "Screenshot of a potential match for an unmatched consent response.",
-    #     "image_name": "consent-link.png",
-    #     "url_extension": "consent-forms/1",
-    #     "screen_size": {    
-    #         "width": 700,
-    #         "height": 1080
-    #     },
-    #     "further_processing": process_consent_matching
-    # },
-    # {
-    #     "description": "Screenshot of selecting paper as the response method.",
-    #     "image_name": "consent-response-paper.png",
-    #     "url_extension": "sessions/1/consents/given",
-    #     "screen_size": {    
-    #         "width": 700,
-    #         "height": 1080
-    #     },
-    #     "further_processing": process_get_consent
-    # },
-    # {
-    #     "description": "Screenshot of a list of unmatched consent responses.",      
-    #     "image_name": "consent-unmatched.png",
-    #     "url_extension": "consent-forms",
-    #     "screen_size": {    
-    #         "width": 1500,
-    #         "height": 1080
-    #     },
-    # },
+    {
+        "description": "Screenshot of a potential match for an unmatched consent response.",
+        "image_name": "consent-link.png",
+        "url_extension": "consent-forms/1",
+        "screen_size": {    
+            "width": 700,
+            "height": 1080
+        },
+        "further_processing": process_consent_matching
+    },
+    {
+        "description": "Screenshot of selecting paper as the response method.",
+        "image_name": "consent-response-paper.png",
+        "url_extension": "sessions/1/consents/given",
+        "screen_size": {    
+            "width": 700,
+            "height": 1080
+        },
+        "further_processing": process_get_consent
+    },
+    {
+        "description": "Screenshot of a list of unmatched consent responses.",      
+        "image_name": "consent-unmatched.png",
+        "url_extension": "consent-forms",
+        "screen_size": {    
+            "width": 1500,
+            "height": 1080
+        },
+    },
     # {
     #     "description": "Screenshot of important notices page.",       #ask about how to create notices
     #     "image_name": "notices.png",
@@ -97,7 +42,8 @@ IMAGES = [
     #     "login": {
     #         "username": "superuser@example.com",
     #         "password": "superuser@example.com"
-    #     }
+    #     },
+    #     "full_page": True
     # },
     # {
     #     "description": "Screenshot of important notices page.",       #screenshotting excel?
@@ -128,7 +74,7 @@ IMAGES = [
         "full_page": True
     },
     {
-        "description": "Screenshot of the programme overview page",     
+        "description": "Screenshot of the programme overview page.",     
         "image_name": "programme-overview.png",
         "url_extension": "programmes/hpv",
         "screen_size": {    
@@ -136,6 +82,141 @@ IMAGES = [
             "height": 900
         },
         "full_page": True
-    }
+    },
+    {
+        "description": "Screenshot of cohort triage.",     
+        "image_name": "programme-triage.png",
+        "url_extension": "programmes/hpv/patients",
+        "screen_size": {    
+            "width": 1200,
+            "height":1080
+        },
+    },
+    {
+        "description": "Screenshot of programme vaccinations tab.",     
+        "image_name": "programme-vaccinations.png",
+        "url_extension": "programmes/hpv/vaccination-records",
+        "screen_size": {    
+            "width": 1200,
+            "height":1080
+        },
+    },
+    {
+        "description": "Screenshot of page showing children who have moved school.",     
+        "image_name": "school-move-list.png",
+        "url_extension": "school-moves",
+        "screen_size": {    
+            "width": 1200,
+            "height":1080
+        },
+    },
+    {
+        "description": "Screenshot of page showing children who have moved school.",     
+        "image_name": "school-move-review.png",
+        "url_extension": "school-moves/1",
+        "screen_size": {    
+            "width": 1200,
+            "height":1080
+        },
+        "full_page": True
+    },
+    {
+        "description": "Screenshot of a register attendance page.",
+        "image_name": "session-attendance.png",
+        "url_extension": "sessions/1/attendances/unregistered?sort=name&direction=asc",
+        "screen_size": {    
+            "width": 1100,
+            "height": 1080
+        }
+    },
+    {
+        "description": "Screenshot of pre-screening questions on a patient record.",     
+        "image_name": "session-child-pre-screen.png",
+        "url_extension": "sessions/1/vaccinations/vaccinate",
+        "screen_size": {    
+            "width": 1200,
+            "height":1080
+        },
+        "further_processing": process_pre_screening
+    },
+    {
+        "description": "Screenshot of overview page for a completed session.",     
+        "image_name": "session-completed.png",
+        "url_extension": "sessions/2",
+        "screen_size": {    
+            "width": 1200,
+            "height":1080
+        },
+        "full_page": True
+    },
+    {
+        "description": "Screenshot of selecting a Gillick competent child.",     
+        "image_name": "session-consent-gillick-competent.png",
+        "url_extension": "sessions/1/consents/given",
+        "screen_size": {    
+            "width": 1200,
+            "height":1080
+        },
+        "further_processing": process_get_gillick_competent_consent
+    },
+    {
+        "description": "Screenshot of consent responses for a session.",     
+        "image_name": "session-consent.png",
+        "url_extension": "sessions/1/consents/no-consent",
+        "screen_size": {    
+            "width": 1200,
+            "height":1080
+        },
+        "full_page": True
+    },
+    {
+        "description": "Screenshot of session edit screen with session dates added.",     
+        "image_name": "session-edit-with-dates.png",
+        "url_extension": "sessions/1/edit",
+        "screen_size": {    
+            "width": 1300,
+            "height":1080
+        },
+        "full_page": True
+    },
+    {
+        "description": "Screenshot of session edit screen without any session dates added.",     
+        "image_name": "session-edit-without-dates.png",
+        "url_extension": "sessions/unscheduled",
+        "screen_size": {    
+            "width": 1200,
+            "height":1080
+        },
+        "further_processing": process_sessions_add_dates
+    },
+    {
+        "description": "Screenshot of the check consent responses page.",     
+        "image_name": "session-no-consent-response.png",
+        "url_extension": "sessions/1/consents/no-consent",
+        "screen_size": {    
+            "width": 1200,
+            "height":1080
+        },
+        "full_page": True
+    },
+    {
+        "description": "Screenshot of a session overview page.",     
+        "image_name": "session.png",
+        "url_extension": "sessions/1",
+        "screen_size": {    
+            "width": 1200,
+            "height":1080
+        },
+        "full_page": True
+    },
+    {
+        "description": "Screenshot of vaccines page.",     
+        "image_name": "vaccines.png",
+        "url_extension": "vaccines",
+        "screen_size": {    
+            "width": 1200,
+            "height":1080
+        },
+    },
 ]
 
