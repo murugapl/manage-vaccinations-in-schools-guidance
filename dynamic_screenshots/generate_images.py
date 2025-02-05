@@ -26,8 +26,6 @@ async def main():
     dynamic_screenshots_dir = os.path.dirname(__file__)
     os.makedirs(os.path.join(dynamic_screenshots_dir,"screenshots"), exist_ok=True)
 
-    metadata_file = os.path.join(dynamic_screenshots_dir, "images.json")
-
     image_metadata = IMAGES
 
     for image in tqdm(image_metadata):
