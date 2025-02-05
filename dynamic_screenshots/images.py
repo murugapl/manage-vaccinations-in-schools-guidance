@@ -30,6 +30,7 @@ IMAGES = [
             "width": 1500,
             "height": 1080
         },
+        "full_page": True
     },
     # {
     #     "description": "Screenshot of important notices page.",       #ask about how to create notices

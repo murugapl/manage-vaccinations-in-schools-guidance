@@ -38,11 +38,7 @@ async def process_get_consent(page, output_file):
     await page.get_by_role("button", name="Continue").click()
     await page.get_by_role("button", name="Continue").click()
 
-    details_key = page.get_by_role("main")
-    details_box = await details_key.element_handle()
-    details_box = await details_box.bounding_box()
-
-    details_box = add_margins(details_box, 5)
+    details_box = await remove_footer(page)
 
     await page.screenshot(path=output_file, clip=details_box, full_page=True)
 
