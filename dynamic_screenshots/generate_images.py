@@ -22,7 +22,7 @@ async def main():
     username = "nurse.joy@example.com"
     password = "nurse.joy@example.com"
     base_url = "http://127.0.0.1:4000/"
-    
+
     dynamic_screenshots_dir = os.path.dirname(__file__)
     os.makedirs(os.path.join(dynamic_screenshots_dir,"screenshots"), exist_ok=True)
 
@@ -31,24 +31,24 @@ async def main():
     for image in tqdm(image_metadata):
         tqdm.write(f"Capturing screenshot: {image['image_name']}")
         target_url = base_url + image["url_extension"]
-        output_file = f"{dynamic_screenshots_dir}/screenshots/{image['image_name']}"
+        output_file = f"{dynamic_screenshots_dir}/../app/assets/images/{image['image_name']}"
 
         full_page = image["full_page"] if "full_page" in image.keys() else False
 
         async with async_playwright() as p:
             browser = await p.chromium.launch()  # Set headless=True as needed
             context = await browser.new_context(viewport={
-                "width": image["screen_size"]["width"], 
+                "width": image["screen_size"]["width"],
                 "height": 100 if full_page else image["screen_size"]["height"]
             })
             page = await context.new_page()
-            
+
             # Login to the application
             if "login" in image.keys():
                 username = image["login"]["username"]
                 password = image["login"]["password"]
             await login(page, username, password)
-            
+
             # After login, navigate to the target URL and capture the screenshot.
             await page.goto(target_url)
             if "further_processing" in image.keys():
@@ -59,7 +59,7 @@ async def main():
                 else:
                     body_box = None
                 await page.screenshot(path=output_file, full_page=full_page, clip=body_box)
-            
+
             await browser.close()
     print("Done")
 

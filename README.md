@@ -23,9 +23,13 @@ source .venv/bin/activate
 pip install -r requirements.txt
 playwright install
 ```
-Ensure you are on the latest version of Mavis. Reset the database used in your local deployment of the service, by deleting the database `manage_vaccinations_development` and re-running `bin/setup`. 
+Ensure you are on the latest version of Mavis. Reset the database used in your local deployment of the service, by deleting the database `manage_vaccinations_development` and re-running `bin/setup`.
 
-Then run `python dynamic_screenshots/python generate_images.py`. The images will be stored in the `dynamic_screenshots/screenshots` directory. 
+Then run `python dynamic_screenshots/python generate_images.py`. The images will be stored in the `dynamic_screenshots/screenshots` directory.
+
+[//]: # (TODO Add a note also that if it fails with a timeout error, just try again straight away)
+[//]: # (TODO Add instructions as to how to add a new image)
+[//]: # (TODO I think there was something else as well, but can't remember right now...)
 
 ## Running locally
 
