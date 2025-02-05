@@ -14,6 +14,16 @@ The canonical source of content for the user guide is a Google Doc. This documen
 
 The canonical source of content for the XLSX file download templates is Microsoft SharePoint. These documents should be edited first before downloading and updating the files in this repository.
 
+# Updating screenshots
+
+To get an updated set of screenshots from the latest deployed version, setup with the following
+```
+python -m venv dynamic_screenshots
+source myenv/bin/activate
+pip install -r requirements.txt
+```
+Then run `dynamic_screenshots/python generate_images.py`. The images will be stored in the `dynamic_screenshots/screenshots` directory. 
+
 ## Running locally
 
 First install [Node.js](https://nodejs.org/en).

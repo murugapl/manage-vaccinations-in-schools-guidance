@@ -31,7 +31,7 @@ async def main():
     image_metadata = IMAGES
 
     for image in tqdm(image_metadata):
-        print(f"Capturing screenshot: {image['image_name']}")
+        tqdm.write(f"Capturing screenshot: {image['image_name']}")
         target_url = base_url + image["url_extension"]
         output_file = f"{dynamic_screenshots_dir}/screenshots/{image['image_name']}"
 
