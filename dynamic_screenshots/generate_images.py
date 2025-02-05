@@ -38,7 +38,6 @@ async def main():
         full_page = image["full_page"] if "full_page" in image.keys() else False
 
         async with async_playwright() as p:
-            image
             browser = await p.chromium.launch()  # Set headless=True as needed
             context = await browser.new_context(viewport={
                 "width": image["screen_size"]["width"], 

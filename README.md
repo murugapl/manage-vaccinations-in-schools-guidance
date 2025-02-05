@@ -18,9 +18,10 @@ The canonical source of content for the XLSX file download templates is Microsof
 
 To get an updated set of screenshots from the latest deployed version, setup with the following
 ```
-python -m venv dynamic_screenshots
-source myenv/bin/activate
+python -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
+playwright install
 ```
 Ensure you are on the latest version of Mavis. Reset the database used in your local deployment of the service, by deleting the database `manage_vaccinations_development` and re-running `bin/setup`. 
 
