@@ -33,7 +33,7 @@ The images will be stored in the `app/assets/images` directory.
 
 If it fails with a timeout error, re-run the script. This happens due to temporary database performance issues.
 
-Currently, there is not sufficient logic to generate screenshots of the 'Notices' tab ([`notices.png`](/home/lakshmimurugappan/MAVIS/manage-vaccinations-in-schools-guidance/app/assets/images/notices.png)) and the offline recording spreadsheet ([`offline-spreadsheet.png`](/home/lakshmimurugappan/MAVIS/manage-vaccinations-in-schools-guidance/app/assets/images/offline-spreadsheet.png)). These will have to be generated manually and added to the `app/assets/images` directory if they need updating.
+Currently, there is not sufficient logic to generate screenshots of the 'Notices' tab ([`notices.png`](app/assets/images/notices.png)) and the offline recording spreadsheet ([`offline-spreadsheet.png`](/app/assets/images/offline-spreadsheet.png)). These will have to be generated manually and added to the `app/assets/images` directory if they need updating.
 
 #### To add a new image:
 - Add image metadata, including name and url extension, to the `images.py` file.
