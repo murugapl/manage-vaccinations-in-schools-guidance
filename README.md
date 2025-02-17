@@ -33,11 +33,15 @@ The images will be stored in the `app/assets/images` directory.
 
 If it fails with a timeout error, re-run the script. This happens due to temporary database performance issues.
 
-Currently, there is not sufficient logic to generate screenshots of the 'Notices' tab ([`notices.png`](app/assets/images/notices.png)) and the offline recording spreadsheet ([`offline-spreadsheet.png`](/app/assets/images/offline-spreadsheet.png)). These will have to be generated manually and added to the `app/assets/images` directory if they need updating.
+Currently, there is not sufficient logic to generate screenshots of the following:
+* 'Notices' tab ([`notices.png`](app/assets/images/notices.png)) 
+* Offline recording spreadsheet ([`offline-spreadsheet.png`](/app/assets/images/offline-spreadsheet.png)). 
+
+These will have to be generated manually and added to the `app/assets/images` directory if they need updating.
 
 #### To add a new image:
-- Add image metadata, including name and url extension, to the `images.py` file.
-- If further processing is needed from the url extension, such as click-throughs, create a function in `process_images.py`.
+- Add image metadata, including name and path, to the `images.py` file.
+- If further processing is needed from the path, such as click-throughs, create a function in `process_images.py`.
 
 
 ## Running locally

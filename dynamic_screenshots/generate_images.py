@@ -5,17 +5,16 @@ from tqdm import tqdm
 from utils import remove_footer
 from images import IMAGES
 
-async def login(page, username: str, password: str):
+async def login(page, username: str, password: str, timeout=1000):
     # Replace with your app's login URL and adjust selectors as needed.
     await page.goto("http://127.0.0.1:4000/")
-    await page.get_by_text("Start now").click()
-    await page.get_by_label("Email address").fill(username)
+    await page.get_by_text("Start now", exact=True).click()
+    await page.get_by_label("Email address", exact=True).fill(username)
     await page.get_by_label("Password", exact=True).fill(password)
-    await page.get_by_role("button", name="Log in").click()
-    await page.wait_for_url("**/users/organisations/new", timeout=1000)
-    await page.pause()
-    await page.get_by_role("heading", name="SAIS Organisation 1 (R1L)").click()
-    await page.wait_for_url("**/dashboard", timeout=1000)
+    await page.get_by_role("button", name="Log in", exact=True).click()
+    await page.wait_for_url("**/users/organisations/new", timeout=timeout)
+    await page.get_by_role("heading", name="SAIS Organisation 1 (R1L)", exact=True).click()
+    await page.wait_for_url("**/dashboard", timeout=timeout)
 
 
 async def main():
@@ -30,7 +29,7 @@ async def main():
 
     for image in tqdm(image_metadata):
         tqdm.write(f"Capturing screenshot: {image['image_name']}")
-        target_url = base_url + image["url_extension"]
+        target_url = base_url + image["path"]
         output_file = f"{dynamic_screenshots_dir}/../app/assets/images/{image['image_name']}"
 
         full_page = image["full_page"] if "full_page" in image.keys() else False
@@ -47,7 +46,7 @@ async def main():
             if "login" in image.keys():
                 username = image["login"]["username"]
                 password = image["login"]["password"]
-            await login(page, username, password)
+            await login(page, username, password, timeout=1000)
 
             # After login, navigate to the target URL and capture the screenshot.
             await page.goto(target_url)
