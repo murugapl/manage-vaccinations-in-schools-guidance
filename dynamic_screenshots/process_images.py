@@ -7,7 +7,7 @@ async def process_consent_matching(page, output_file):
     child_row = child_key.locator("..")
     child_value = await child_row.locator("dd").inner_text()
     await page.get_by_label("Name", exact=True).fill(child_value)
-    time.sleep(5)
+    await page.wait_for_timeout(5000) #wait for database search to complete
     await page.get_by_role("link", name="Select").click()
 
     title_key = page.get_by_text(" Link consent response with child record? ")

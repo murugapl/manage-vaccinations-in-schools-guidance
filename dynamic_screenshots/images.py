@@ -29,26 +29,6 @@ IMAGES = [
         },
         "full_page": True
     },
-    # {
-    #     "image_name": "notices.png",
-    #     "path": "notices",
-    #     "screen_size": {
-    #         "width": 1500,
-    #         "height": 1080
-    #     },
-    #     "login": {
-    #         "username": "superuser@example.com",
-    #         "password": "superuser@example.com"
-    #     },
-    #     "full_page": True
-    # },
-    # {
-    #     "image_name": "offline-spreadsheet.png",
-    #     "screen_size": {
-    #         "width": 1500,
-    #         "height": 1080
-    #     },
-    # },
     {
         "image_name": "organisation.png",
         "path": "organisation",
