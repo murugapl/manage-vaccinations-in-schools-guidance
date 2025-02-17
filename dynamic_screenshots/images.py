@@ -13,7 +13,7 @@ IMAGES = [
     },
     {
         "image_name": "consent-response-paper.png",
-        "path": "sessions/1/consents/given",
+        "path": "sessions/session-1/consents/given",
         "screen_size": {
             "width": 700,
             "height": 1080
@@ -91,7 +91,7 @@ IMAGES = [
     },
     {
         "image_name": "session-attendance.png",
-        "path": "sessions/1/attendances/unregistered?sort=name&direction=asc",
+        "path": "sessions/session-1/attendances/unregistered?sort=name&direction=asc",
         "screen_size": {
             "width": 1100,
             "height": 1080
@@ -99,7 +99,7 @@ IMAGES = [
     },
     {
         "image_name": "session-child-pre-screen.png",
-        "path": "sessions/1/vaccinations/vaccinate",
+        "path": "sessions/session-1/vaccinations/vaccinate",
         "screen_size": {
             "width": 1200,
             "height":1080
@@ -108,7 +108,7 @@ IMAGES = [
     },
     {
         "image_name": "session-completed.png",
-        "path": "sessions/2",
+        "path": "sessions/session-2",
         "screen_size": {
             "width": 1200,
             "height":1080
@@ -117,7 +117,7 @@ IMAGES = [
     },
     {
         "image_name": "session-consent-gillick-competent.png",
-        "path": "sessions/1/consents/given",
+        "path": "sessions/session-1/consents/given",
         "screen_size": {
             "width": 1200,
             "height":1080
@@ -126,7 +126,7 @@ IMAGES = [
     },
     {
         "image_name": "session-consent.png",
-        "path": "sessions/1/consents/no-consent",
+        "path": "sessions/session-1/consents/no-consent",
         "screen_size": {
             "width": 1200,
             "height":1080
@@ -135,7 +135,7 @@ IMAGES = [
     },
     {
         "image_name": "session-edit-with-dates.png",
-        "path": "sessions/1/edit",
+        "path": "sessions/session-1/edit",
         "screen_size": {
             "width": 1300,
             "height":1080
@@ -153,7 +153,7 @@ IMAGES = [
     },
     {
         "image_name": "session-no-consent-response.png",
-        "path": "sessions/1/consents/no-consent",
+        "path": "sessions/session-1/consents/no-consent",
         "screen_size": {
             "width": 1200,
             "height":1080
@@ -162,7 +162,7 @@ IMAGES = [
     },
     {
         "image_name": "session.png",
-        "path": "sessions/1",
+        "path": "sessions/session-1",
         "screen_size": {
             "width": 1200,
             "height":1080
