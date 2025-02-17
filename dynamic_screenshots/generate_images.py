@@ -5,9 +5,9 @@ from tqdm import tqdm
 from utils import remove_footer
 from images import IMAGES
 
-async def login(page, username: str, password: str, timeout=1000):
+async def login(page, base_url, username: str, password: str, timeout=1000):
     # Replace with your app's login URL and adjust selectors as needed.
-    await page.goto("http://127.0.0.1:4000/")
+    await page.goto(base_url)
     await page.get_by_text("Start now", exact=True).click()
     await page.get_by_label("Email address", exact=True).fill(username)
     await page.get_by_label("Password", exact=True).fill(password)
@@ -26,29 +26,30 @@ async def main():
     os.makedirs(os.path.join(dynamic_screenshots_dir,"screenshots"), exist_ok=True)
 
     image_metadata = IMAGES
+    
+    async with async_playwright() as p:
+        browser = await p.chromium.launch()  # Set headless=True as needed
+        context = await browser.new_context(viewport={ 'width': 1280, 'height': 1024 })
 
-    for image in tqdm(image_metadata):
-        tqdm.write(f"Capturing screenshot: {image['image_name']}")
-        target_url = base_url + image["path"]
-        output_file = f"{dynamic_screenshots_dir}/../app/assets/images/{image['image_name']}"
+        page = await context.new_page()
 
-        full_page = image["full_page"] if "full_page" in image.keys() else False
+        # Login to the application
+        await login(page, base_url, username, password, timeout=1000)
 
-        async with async_playwright() as p:
-            browser = await p.chromium.launch()  # Set headless=True as needed
-            context = await browser.new_context(viewport={
-                "width": image["screen_size"]["width"],
-                "height": 100 if full_page else image["screen_size"]["height"]
-            })
+        for image in tqdm(image_metadata):
+            tqdm.write(f"Capturing screenshot: {image['image_name']}")
+            target_url = base_url + image["path"]
+            output_file = f"{dynamic_screenshots_dir}/../app/assets/images/{image['image_name']}"
+
+            full_page = image["full_page"] if "full_page" in image.keys() else False
+
             page = await context.new_page()
+            await page.set_viewport_size({
+            "width": image["screen_size"]["width"],
+            "height": 100 if full_page else image["screen_size"]["height"]
+            })
 
-            # Login to the application
-            if "login" in image.keys():
-                username = image["login"]["username"]
-                password = image["login"]["password"]
-            await login(page, username, password, timeout=1000)
-
-            # After login, navigate to the target URL and capture the screenshot.
+            # Navigate to the target URL and capture the screenshot.
             await page.goto(target_url)
             if "further_processing" in image.keys():
                 await image["further_processing"](page, output_file)
@@ -59,7 +60,7 @@ async def main():
                     body_box = None
                 await page.screenshot(path=output_file, full_page=full_page, clip=body_box)
 
-            await browser.close()
+        await browser.close()
     print("Done")
 
 if __name__ == "__main__":
