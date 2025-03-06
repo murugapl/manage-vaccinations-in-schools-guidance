@@ -4,7 +4,7 @@ group: Sessions
 order: 36
 ---
 
-Once all sessions at a school have been completed, you can invite all unvaccinated patients from this school to a community clinic.
+Once all sessions at a school have been completed, you can invite all unvaccinated children from this school to a community clinic.
 
 1. Go to the relevant school page.
 2. Click the **Send clinic invitations** button.
