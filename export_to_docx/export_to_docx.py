@@ -5,6 +5,17 @@ import glob
 import yaml
 import argparse
 from docx import Document
+from docx.shared import RGBColor
+from docx.oxml.ns import qn
+from docx.shared import Pt
+
+def set_arial_font(run):
+    """Set the font to Arial for a run object."""
+    run.font.name = 'Arial'
+    run._element.rPr.rFonts.set(qn('w:eastAsia'), 'Arial')
+    run._element.rPr.rFonts.set(qn('w:cs'), 'Arial')
+    run._element.rPr.rFonts.set(qn('w:ascii'), 'Arial')
+    run._element.rPr.rFonts.set(qn('w:hAnsi'), 'Arial')
 
 def extract_frontmatter(content):
     """
@@ -21,7 +32,6 @@ def extract_frontmatter(content):
         except yaml.YAMLError as e:
             print(f"Error parsing YAML: {e}")
             data = None
-        # Remove front matter from content
         return data, content[match.end():]
     return None, content
 
@@ -30,7 +40,7 @@ def md_to_docx(input_dir, output_file):
     md_file_paths = glob.glob(os.path.join(input_dir, "*.md"))
     files_with_order = []
 
-    # Extract order from YAML front matter in each file.
+    # Extract order from YAML front matter in each file
     for filepath in md_file_paths:
         with open(filepath, "r", encoding="utf-8") as f:
             content = f.read()
@@ -43,17 +53,22 @@ def md_to_docx(input_dir, output_file):
 
     for idx, (_, filepath, content) in enumerate(files_with_order):
         print(f"Processing {filepath} ...")
-        # Process content line by line.
+        # Process content line by line
         for line in content.splitlines():
-            # Check for markdown header syntax.
+            # Check for markdown header syntax
             header_match = re.match(r"^(#{1,6})\s+(.*)$", line)
             if header_match:
                 hashes, text = header_match.groups()
                 level = len(hashes)
-                doc.add_heading(text.strip(), level=level)
+                heading = doc.add_heading(text.strip(), level=level)
+                for run in heading.runs:
+                    set_arial_font(run)
             else:
-                # Add non-header text lines as paragraphs.
-                doc.add_paragraph(line.rstrip())
+                # Add non-header text lines as paragraphs
+                paragraph = doc.add_paragraph(line.rstrip())
+                for run in paragraph.runs:
+                    set_arial_font(run)
+
         # Add a page break between files (except after the last file)
         if idx < len(files_with_order) - 1:
             doc.add_page_break()
