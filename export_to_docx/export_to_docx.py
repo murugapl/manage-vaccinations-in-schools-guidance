@@ -46,13 +46,25 @@ def md_to_docx(input_dir, output_file):
             content = f.read()
         frontmatter, remaining = extract_frontmatter(content)
         order = frontmatter.get("order") if (frontmatter and "order" in frontmatter) else float('inf')
-        files_with_order.append((order, filepath, remaining))
+        title = frontmatter.get("title") if frontmatter else None
+        files_with_order.append((order, filepath, remaining, title))
 
     # Sort files based on the order value
     files_with_order.sort(key=lambda tup: tup[0])
 
-    for idx, (_, filepath, content) in enumerate(files_with_order):
+    for idx, (_, filepath, content, title) in enumerate(files_with_order):
         print(f"Processing {filepath} ...")
+
+        # Add page break before content (except for first file)
+        if idx > 0:
+            doc.add_page_break()
+
+        # Add title as header 1 if it exists
+        if title:
+            heading = doc.add_heading(title, level=1)
+            for run in heading.runs:
+                set_arial_font(run)
+
         # Process content line by line
         for line in content.splitlines():
             # Check for markdown header syntax
@@ -68,10 +80,6 @@ def md_to_docx(input_dir, output_file):
                 paragraph = doc.add_paragraph(line.rstrip())
                 for run in paragraph.runs:
                     set_arial_font(run)
-
-        # Add a page break between files (except after the last file)
-        if idx < len(files_with_order) - 1:
-            doc.add_page_break()
 
     doc.save(output_file)
     print(f"Saved DOCX output to {output_file}")
