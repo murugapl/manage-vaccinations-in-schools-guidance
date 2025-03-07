@@ -48,7 +48,7 @@ To invite children who belong to a school, but were not vaccinated there:
 To send booking reminders for subsequent clinics:
 1. Go to **Sessions**
 2. Go to the **Community clinic** link (under Scheduled or Unscheduled)
-3. Go to **Send booking reminders**. This will show you a summary of children you can invite again to the next clinic [attach screenshots]
+3. Go to **Send booking reminders**. This will show you a summary of children you can invite again to the next clinic
 4. Click the **Send booking reminders** button
 
 You will only be able to send clinic booking reminders to children that have been invited for a previous clinic, but have still not been vaccinated. You can only send one invitation per child per clinic session date.
