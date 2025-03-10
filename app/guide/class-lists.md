@@ -6,7 +6,7 @@ order: 29
 
 [[toc]]
 
-To ensure you have an accurate cohort before a school session, Mavis allows you to import individual school class lists. Mavis will update the cohort list with any contact details provided and automatically identify and movers in and out. 
+To ensure you have an accurate cohort before a school session, Mavis allows you to import individual school class lists. Mavis will update the cohort list with any contact details provided and automatically identify and movers in and out.
 
 Class lists from each school can be uploaded using the following template:
 
@@ -29,12 +29,13 @@ First, you need to reformat the class list provided by the school ready for uplo
 
 In Mavis:
 
-1. Go to **Programmes**.
-2. Go to **HPV**.
-3. Go to the correct school.
-4. Select **Import class list**.
-5. Choose the .csv version of the class list and select **Continue**. If there are any validation issues, Mavis will not import the file. Correct the issues listed and try again.
-6. Wait for the file to finish importing.
+1. Go to **Import** in the top navigation.
+2. Click on **Import records**.
+3. Select **Class list records** and click **Continue**.
+4. Search for the school by name and click **Continue.**
+5. Select which year groups these records are for.
+
+![Screenshot of choosing year groups for class list imports.](/assets/images/import-class-list-year-groups.png 'Select which year groups your class list import contains.')
 
 ## Reviewing children who have moved schools
 

@@ -7,6 +7,19 @@ eleventyComputed:
     key: Scheduling sessions
 ---
 
+## Adding programmes to a session
+
+You can select which vaccination programmes you are running at a session
+
+1. Go to **Sessions**.
+2. Go to the **Unscheduled** tab.
+3. Select a location.
+4. Go to **Edit session**.
+5. Under **Programmes**, go to the **Change** link, and select which programmes you are offering at this session.
+![Screenshot of session edit programmes screen.](/assets/images/add-session-programmes.png 'Adjust programmes offered at a session.')
+
+## Scheduling session dates
+
 You should only schedule sessions after you’ve uploaded vaccination records and class lists.
 
 1. Go to **Sessions**.
