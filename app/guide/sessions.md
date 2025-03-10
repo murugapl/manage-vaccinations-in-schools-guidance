@@ -12,7 +12,7 @@ eleventyComputed:
 You can select which vaccination programmes you are running at a session
 
 1. Go to **Sessions**.
-2. Navigate to the relevant location, under any of the tabs.
+2. Find the session you would like to modify within the different tabs on the **Sessions** page.
 3. Go to **Edit session**.
 4. Under **Programmes**, go to the **Change** link, and select which programmes you are offering at this session.
 
