@@ -45,9 +45,8 @@ To record a vaccination offline if the child was vaccinated:
 If a child was not vaccinated:
 
 1. Choose ‘N’ from the dropdown menu in the vaccinated column.
-2. Enter the name of the vaccination that was not given in the `VACCINE_GIVEN` column, so we can link the vaccination record with the right programme in Mavis.
-3. Choose the correct reason why the vaccine was not performed in the relevant column using the dropdown menu.
-4. Any notes about the vaccination should be added to the notes column.
+2. Choose the correct reason why the vaccine was not performed in the relevant column using the dropdown menu.
+3. Any notes about the vaccination should be added to the notes column.
 
 ### Entering valid information
 
@@ -63,7 +62,7 @@ To view a list of accepted formats:
 
 ## Adding offline data to Mavis
 
-Once you have a reliable internet connection again, you can update Mavis with the results of the session. 
+Once you have a reliable internet connection again, you can update Mavis with the results of the session.
 
 Before doing this, the individual spreadsheets from each nurse should first be amalgamated into a single spreadsheet containing all the vaccination records from the session.
 
