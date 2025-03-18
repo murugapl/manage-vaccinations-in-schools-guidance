@@ -62,7 +62,7 @@ To view a list of accepted formats:
 
 ## Adding offline data to Mavis
 
-Once you have a reliable internet connection again, you can update Mavis with the results of the session. 
+Once you have a reliable internet connection again, you can update Mavis with the results of the session.
 
 Before doing this, the individual spreadsheets from each nurse should first be amalgamated into a single spreadsheet containing all the vaccination records from the session.
 
