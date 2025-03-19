@@ -1,5 +1,5 @@
 ---
-title: Sharing consent forms with schools who haven’t provided contact details
+title: Sharing consent forms with schools who have not provided contact details
 group: Consent
 order: 21
 eleventyComputed:
@@ -7,7 +7,7 @@ eleventyComputed:
     key: Sharing consent forms
 ---
 
-If schools haven’t provided parents’ contact details, they’ll need to send out consent requests and consent reminders that you’ve provided them with.
+If schools have not provided parents’ contact details, they’ll need to send out consent requests and consent reminders that you’ve provided them with.
 
 - [Copy of consent request email](/guide/consent-request-email)
 - [Copy of consent reminder email](/guide/consent-reminder-email)

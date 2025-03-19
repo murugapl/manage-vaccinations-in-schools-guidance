@@ -9,7 +9,7 @@ eleventyComputed:
 
 ## Adding programmes to a session
 
-You can select which vaccination programmes you are running at a session
+You can select which vaccination programmes you are running at a session.
 
 1. Go to **Sessions**.
 2. Find the session you would like to modify within the different tabs on the **Sessions** page.
