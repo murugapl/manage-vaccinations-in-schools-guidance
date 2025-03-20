@@ -31,7 +31,7 @@ The HPV vaccine works best if it’s given before young people become sexually a
   html: "It’s important to let us know whether you do or do not want your child to have the vaccination. It will take less than 5 minutes to respond using the link below. You need to respond by ==consent deadline==."
 }) }}
 
-==Consent URL==
+==consent URL==
 
 ### Talk to your child about what they want
 
@@ -45,7 +45,7 @@ If you cannot use the online form, you can respond over the phone using the cont
 
 ### Your data
 
-By responding, you’re agreeing to your data being processed as set out in our privacy notice: ==Privacy notice URL==.
+By responding, you’re agreeing to your data being processed as set out in our privacy notice: ==privacy notice URL==.
 
 ### Contact the local health team
 

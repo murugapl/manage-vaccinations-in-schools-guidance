@@ -28,7 +28,7 @@ The HPV vaccine works best if it’s given before young people become sexually a
 
 ### Please give or refuse consent
 
-==Consent URL==
+==consent URL==
 
 Responding will take less than 5 minutes. If you do not give consent, it’s still important for you to respond.
 

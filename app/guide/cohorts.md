@@ -41,6 +41,15 @@ You can also check individual children’s records by navigating to the **Childr
 
 ### Importing historic vaccination records (years 9, 10 and 11)
 
+Historic vaccination records can be uploaded using the following template:
+
+{% from "attachment/macro.njk" import attachment %}
+{{ attachment({
+  text: "Vaccination records import template",
+  summary: "Microsoft Excel spreadsheet, 18 KB",
+  href: "/files/historic-vaccination-record-import-template.xlsx"
+}) }}
+
 You should upload historic vaccination records before scheduling school sessions, to ensure that only unvaccinated children are added to a session. (But don’t worry, if you identify that someone is already vaccinated at a later date, you can remove them from the session).
 
 When you’re uploading vaccination records, use the same template you’d use for NIVS. You should upload all vaccination records from the last 3 years.
