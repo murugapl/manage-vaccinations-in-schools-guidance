@@ -1,6 +1,6 @@
 ---
 layout: email
-title: Consent reminder
+title: HPV consent reminder
 group: Email templates
 subject: Please respond to our request for consent by ==consent deadline==
 order: 41

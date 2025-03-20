@@ -1,8 +1,8 @@
 ---
 layout: email
-title: Consent request
+title: HPV consent request email
 group: Email templates
-subject: HPV vaccination on ==next session dates==
+subject: HPV vaccination for ==patient name==
 order: 40
 ---
 

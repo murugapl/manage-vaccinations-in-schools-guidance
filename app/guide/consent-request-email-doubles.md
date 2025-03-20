@@ -1,9 +1,9 @@
 ---
 layout: email
-title: Consent reminder for MenACWY and Td/IPV vaccines
+title: MenACWY and Td/IPV consent request
 group: Email templates
-subject: Please respond to our request for consent by ==consent deadline==
-order: 41
+subject: MenACWY and Td/IPV vaccinations for ==patient name==
+order: 42
 ---
 
 We wrote to you recently to let you know we're coming to ==location name== on ==next session dates== to offer your child their ==vaccination==.
