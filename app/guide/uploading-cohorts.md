@@ -34,7 +34,7 @@ Once the file has finished importing, there may be some import issues which you 
 
 Mavis will highlight any potential duplicates found in the uploaded file and compared with what was already in Mavis as an import issue.
 
-Go to the **Import issues** tab. For each record:
+Go to the **Import** tab. Under **Import issues**, for each record:
 
 1. Select **Review**.
 2. Select which version of the record you want to keep and select resolve duplicate.

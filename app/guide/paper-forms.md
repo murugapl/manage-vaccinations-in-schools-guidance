@@ -9,7 +9,7 @@ eleventyComputed:
 
 ## Downloading a paper-based consent form
 
-If you receive a request to send a parent a paper-based consent form, you:
+If you receive a request to send a parent a paper-based consent form, you can download and print the relevant form from Mavis.
 
 1. Go to **Sessions**, then the **Scheduled** tab.
 2. Find the relevant school.
