@@ -14,7 +14,7 @@ To register children as attending or absent:
 1. Go to **Sessions**.
 2. Go to the **Today** tab.
 3. Click on the name of the school you’re attending.
-4. Go to the **Register** tab and filter for **Not registered yet**.
+4. Go to the **Register** tab.
 
 ![Screenshot of a register attendance page.](/assets/images/session-attendance.png 'You must register attendance before you can record vaccinations.')
 
