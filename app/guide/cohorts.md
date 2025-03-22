@@ -41,6 +41,15 @@ You can also check individual children’s records by navigating to the **Childr
 
 ### Importing historic vaccination records (years 9, 10 and 11)
 
+Historic vaccination records can be uploaded using the following template:
+
+{% from "attachment/macro.njk" import attachment %}
+{{ attachment({
+  text: "Vaccination records import template",
+  summary: "Microsoft Excel spreadsheet, 18 KB",
+  href: "/files/historic-vaccination-record-import-template.xlsx"
+}) }}
+
 You should upload historic vaccination records before scheduling school sessions, to ensure that only unvaccinated children are added to a session. (But don’t worry, if you identify that someone is already vaccinated at a later date, you can remove them from the session).
 
 When you’re uploading vaccination records, use the same template you’d use for NIVS. You should upload all vaccination records from the last 3 years.
@@ -69,12 +78,24 @@ Once the file has finished importing, there may be some import issues which you 
 
 Mavis will highlight any potential duplicates found in the uploaded file and compared with what was already in Mavis as an import issue.
 
-Go to the **Import issues** tab. For each record:
+Go to the **Import** tab. For each record under **Import issues**:
 
 1. Select **Review**.
 2. Select which version of the record you want to keep and select resolve duplicate.
 
 If there are some parts of each that are correct, you can note down any correct information from the version you choose to discard, discard it, then go to the child’s record and manually edit the information there (this feature will be more developed in a future release of Mavis).
+
+### Manually recording a child as ‘already vaccinated’
+
+If a child’s historic vaccination record is missing from CHIS data, or you have not been able to upload their historic vaccination record into Mavis, you can manually record the child as ‘already vaccinated’ for a specific programme. You can only do this once sessions have been scheduled (setting up sessions is covered in the ['Sessions'](/guide/sessions.md) section of this user guide).
+
+1. From Sessions, select a session that is not currently in progress.
+2. Search for the child under the **Consent** or **Session outcomes** tab - then click on the child’s name to open the child record.
+3. Select the relevant tab for the vaccination programme you want to record.
+4. Click on the **Record as already vaccinated** link near the top of the page.
+5. Check the details on the page and add a note to explain this was a historic vaccination - then click the **Confirm** button.
+
+^ You can only carry out this action for sessions that are not in progress
 
 ### Checking cohorts and what to do next
 

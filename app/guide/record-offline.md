@@ -100,8 +100,8 @@ Finally, if any vaccinations were subcutaneous rather intramuscular, this needs 
 To do this:
 
 1. Go to the relevant session in Mavis.
-2. Go to **Record vaccinations**.
-3. Click on the **Vaccinated** tab.
+2. Go to the **Session outcomes** tab.
+3. Filter for **Vaccinated** children.
 4. Find the name of the child in the list and click on their name.
 5. On the child record, scroll down the page to find the vaccination record.
 6. Click on **Edit vaccination record**.

@@ -18,6 +18,4 @@ To register children as attending or absent:
 
 ![Screenshot of a register attendance page.](/assets/images/session-attendance.png 'You must register attendance before you can record vaccinations.')
 
-If you want to, you can filter the list of children by **Ready for nurse** and mark those children as attending or absent.
-
-When you mark a child as attending or absent, a banner at the top of the page will tell you whether the child is ready for the nurse or not.
+When you mark a child as attending or absent, the **Status** on the record will indicate the next required action for the child.
