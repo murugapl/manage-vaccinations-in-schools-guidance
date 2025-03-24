@@ -1,6 +1,6 @@
 ---
 layout: email
-title: MenACWY and Td/IPV consent request
+title: MenACWY and Td/IPV initial consent request
 group: Email templates
 subject: MenACWY and Td/IPV vaccinations for ==patient name==
 order: 42
