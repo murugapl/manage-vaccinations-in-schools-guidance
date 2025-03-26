@@ -95,7 +95,10 @@ If a child’s historic vaccination record is missing from CHIS data, or you hav
 4. Click on the **Record as already vaccinated** link near the top of the page.
 5. Check the details on the page and add a note to explain this was a historic vaccination - then click the **Confirm** button.
 
-^ You can only carry out this action for sessions that are not in progress
+{% from "inset-text/macro.njk" import insetText %}
+{{ insetText({
+  html: "You can only carry out this action for sessions that are not in progress."
+}) }}
 
 ### Checking cohorts and what to do next
 
