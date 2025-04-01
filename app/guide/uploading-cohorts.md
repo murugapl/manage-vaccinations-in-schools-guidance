@@ -16,7 +16,7 @@ Cohort records can be uploaded using the following template:
 Make sure the cohort records are in the format shown in the template above. Files need to be in .csv format. Records can be all in one file, or split across multiple files; Mavis is not picky about this. If you have an excel file with multiple tabs, you will need to consolidate this into a single tab or create a separate CSV file for each tab.
 
 1. Go to **Programmes**.
-2. Go to **HPV**.
+2. Go to any of the vaccination programmes, for example **HPV**.
 3. Go to the **Cohorts** tab.
 
 ![Screenshot of programme cohorts tab.](/assets/images/programme-cohorts.png 'Mavis shows the number of children within each programme cohort.')
@@ -34,7 +34,7 @@ Once the file has finished importing, there may be some import issues which you 
 
 Mavis will highlight any potential duplicates found in the uploaded file and compared with what was already in Mavis as an import issue.
 
-Go to the **Import issues** tab. For each record:
+Go to the **Import** tab. Under **Import issues**, for each record:
 
 1. Select **Review**.
 2. Select which version of the record you want to keep and select resolve duplicate.

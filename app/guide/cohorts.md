@@ -18,7 +18,7 @@ Mavis can be used in one of two ways:
 
 Mavis works better, particularly for reporting and monitoring uptake, when complete, age-based cohorts are imported before the programme begins.
 
-To use Mavis with complete cohorts, as well as importing cohort details, you will also need to upload historic vaccination records for year 9 - 11s vaccinated in previous academic years. If these cannot be imported into Mavis, then you can set up Mavis with records for just the unvaccinated cohorts.
+To use Mavis with complete cohorts, as well as importing cohort details, you will also need to upload historic vaccination records for year 9 to 11s vaccinated in previous academic years. If these cannot be imported into Mavis, then you can set up Mavis with records for just the unvaccinated cohorts.
 
 ## Setting up complete, age-based cohorts in Mavis
 
@@ -40,6 +40,15 @@ Once you have uploaded all the cohort files, you can go to the **Cohorts** tab a
 You can also check individual children’s records by navigating to the **Children** tab. You won’t be able to see the children listed under their school in the sessions tab until you have imported historic vaccination records and scheduled at least one session at that school.
 
 ### Importing historic vaccination records (years 9, 10 and 11)
+
+Historic vaccination records can be uploaded using the following template:
+
+{% from "attachment/macro.njk" import attachment %}
+{{ attachment({
+  text: "Vaccination records import template",
+  summary: "Microsoft Excel spreadsheet, 18 KB",
+  href: "/files/historic-vaccination-record-import-template.xlsx"
+}) }}
 
 You should upload historic vaccination records before scheduling school sessions, to ensure that only unvaccinated children are added to a session. (But don’t worry, if you identify that someone is already vaccinated at a later date, you can remove them from the session).
 
@@ -69,18 +78,30 @@ Once the file has finished importing, there may be some import issues which you 
 
 Mavis will highlight any potential duplicates found in the uploaded file and compared with what was already in Mavis as an import issue.
 
-Go to the **Import issues** tab. For each record:
+Go to the **Import** tab. For each record under **Import issues**:
 
 1. Select **Review**.
 2. Select which version of the record you want to keep and select resolve duplicate.
 
 If there are some parts of each that are correct, you can note down any correct information from the version you choose to discard, discard it, then go to the child’s record and manually edit the information there (this feature will be more developed in a future release of Mavis).
 
+### Manually recording a child as ‘already vaccinated’
+
+If a child’s historic vaccination record is missing from CHIS data, or you have not been able to upload their historic vaccination record into Mavis, you can manually record the child as ‘already vaccinated’ for a specific programme. You can only do this once sessions have been scheduled (setting up sessions is covered in the ['Sessions'](/guide/sessions.md) section of this user guide).
+
+1. From Sessions, select a session that is not currently in progress.
+2. Search for the child under the **Consent** or **Session outcomes** tab - then click on the child’s name to open the child record.
+3. Select the relevant tab for the vaccination programme you want to record.
+4. Click on the **Record as already vaccinated** link near the top of the page.
+5. Check the details on the page and add a note to explain this was a historic vaccination - then click the **Confirm** button.
+
+^ You can only carry out this action for sessions that are not in progress
+
 ### Checking cohorts and what to do next
 
-Once you have uploaded all the cohort files and vaccination records, you can go to the **Cohorts** tab and check the counts for each year group show the number of children who need to be vaccinated in this programme year. 
+Once you have uploaded all the cohort files and vaccination records, you can go to the **Cohorts** tab and check the counts for each year group show the number of children who need to be vaccinated in this programme year.
 
-You can also check individual children’s records by navigating to the **Children** tab. However, you won’t be able to see the children listed under their school in the sessions tab until you have scheduled at least one session at that school. 
+You can also check individual children’s records by navigating to the **Children** tab. However, you won’t be able to see the children listed under their school in the sessions tab until you have scheduled at least one session at that school.
 
 Once you have confirmed that the cohort and vaccination records are successfully uploaded, you can proceed to:
 
@@ -104,9 +125,9 @@ To upload cohort records and resolve any issues with the import, follow the inst
 
 ### Checking cohorts and what to do next
 
-Once you have uploaded all the cohort files, you can go to the Cohorts tab and check the counts for each year group are as expected. 
+Once you have uploaded all the cohort files, you can go to the Cohorts tab and check the counts for each year group are as expected.
 
-You can also check individual children’s records by navigating to the Children tab. However, you won’t be able to see the children listed under their school in the sessions tab until you have scheduled at least one session at that school. 
+You can also check individual children’s records by navigating to the Children tab. However, you won’t be able to see the children listed under their school in the sessions tab until you have scheduled at least one session at that school.
 
 Once you have confirmed that the cohort is successfully uploaded, you can proceed to:
 

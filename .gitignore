@@ -4,8 +4,8 @@
 node_modules
 _site
 
-screenshots
 __pycache__
 
 .venv
-.idea
+
+*.docx
