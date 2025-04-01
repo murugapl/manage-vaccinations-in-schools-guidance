@@ -1,4 +1,5 @@
-from utils import add_margins, remove_top_banner,remove_top_banner_and_footer
+import datetime
+from utils import add_margins, get_date, remove_top_banner,remove_top_banner_and_footer
 
 
 async def process_consent_matching(page, output_file):
@@ -30,23 +31,21 @@ async def process_consent_matching(page, output_file):
 
 async def process_get_consent(page, output_file):
     child = await page.query_selector("a.nhsuk-card__link")
-    if child:
-        await child.click()
+    await child.click()
 
     await page.get_by_role("button", name="Get consent response").click()
     radio_buttons = await page.locator("[type='radio']").all()
     await radio_buttons[0].check()   
-    await page.get_by_role("button", name="Continue").click()
-    await page.get_by_role("button", name="Continue").click()
+    await page.get_by_text("Continue", exact=True).click()
+    await page.get_by_text("Continue", exact=True).click()
 
     details_box = await remove_top_banner_and_footer(page)
 
     await page.screenshot(path=output_file, clip=details_box, full_page=True)
 
 async def process_school_move_review(page, output_file):
-    first_link = await page.query_selector("a[href*='Review']")
-    if first_link:
-        first_link.click()
+    first_link = await page.query_selector("a:has-text('Review')")
+    await first_link.click()
     
     details_box = await remove_top_banner_and_footer(page)
 
@@ -54,12 +53,10 @@ async def process_school_move_review(page, output_file):
 
 async def process_pre_screening(page, output_file):
     child = await page.query_selector("a.nhsuk-card__link")
-    if child:
-        await child.click()
+    await child.click()
 
     headers = await page.query_selector_all(".nhsuk-card__content")
-    if headers:
-        header = headers[-1]
+    header = headers[-1]
 
     header_box = await header.bounding_box()
 
@@ -69,8 +66,7 @@ async def process_pre_screening(page, output_file):
 
 async def process_get_gillick_competent_consent(page, output_file):
     child = await page.query_selector("a.nhsuk-card__link")
-    if child:
-        await child.click()
+    await child.click()
     
     await page.get_by_role("link", name="Gillick").click()
     radio_buttons = await page.locator("[type='radio']").all()    
@@ -93,16 +89,18 @@ async def process_get_gillick_competent_consent(page, output_file):
 
 async def process_sessions_add_dates(page, output_file):
     change_links = await page.query_selector_all("a.nhsuk-link:has-text('Change')")
-    if len(change_links) > 1:
-        await change_links[1].click()
+    await change_links[1].click()
+
+    delete_button = await page.get_by_text("Delete", exact=True).all() 
     
-    delete_buttons = await page.get_by_text("Delete", exact=True).all()    
-    for button in delete_buttons:
-        await button.click()
+    while delete_button:   
+        await delete_button[0].click()
+        delete_button = await page.get_by_text("Delete", exact=True).all() 
     
     await page.get_by_text("Continue", exact=True).click()
+    await page.get_by_text("Back", exact=True).click()
+    await page.get_by_text("Continue", exact=True).click()
     await page.get_by_text("Schedule sessions", exact=True).click()
-
 
     body_box = await remove_top_banner_and_footer(page)
 
@@ -117,3 +115,60 @@ async def process_session_no_consent(page, output_file):
     body_box = await remove_top_banner(page)
 
     await page.screenshot(path=output_file, clip=body_box)
+
+async def process_clinic_invitations(page, output_file):
+    link = page.get_by_text("Send clinic invitations", exact=True)
+    await link.click()
+
+    details_key = page.locator('div.nhsuk-grid-column-two-thirds')
+    details_box = await details_key.element_handle()
+    details_box = await details_box.bounding_box()
+
+    details_box = add_margins(details_box, 16)
+
+    await page.screenshot(path=output_file, clip=details_box, full_page=True)
+
+    await page.get_by_text("Send clinic invitations", exact=True).click()
+
+async def process_booking_reminders(page, output_file):
+    await page.get_by_text("Edit session", exact=True).click()
+    change_links = await page.query_selector_all("a.nhsuk-link:has-text('Change')")
+    await change_links[1].click()
+
+    delete_buttons = await page.get_by_text("Delete", exact=True).all()
+    
+    today = datetime.datetime.now().strftime("%d %m %Y")
+    session_dates = await page.query_selector_all('.app-add-another__list-item')
+    for index,session_date in enumerate(session_dates):
+        date_obj = await get_date(session_date)
+        if date_obj.strftime("%d %m %Y") == today:
+            await delete_buttons[index].click()
+            break
+
+    await page.get_by_text("Continue", exact=True).click()
+    await page.get_by_text("Continue", exact=True).click()
+
+    link = page.get_by_text("Send booking reminders", exact=True)
+    await link.click()
+
+    details_key = page.locator('div.nhsuk-grid-column-two-thirds')
+    details_box = await details_key.element_handle()
+    details_box = await details_box.bounding_box()
+
+    details_box = add_margins(details_box, 16)
+
+    await page.screenshot(path=output_file, clip=details_box, full_page=True)
+
+async def process_class_list_year_groups(page, output_file):
+    search_input = page.locator('input[role="combobox"]')
+    await search_input.fill("b")
+    select_field = page.locator('#draft-class-import-session-id-field__listbox')
+    first_option = select_field.locator('li:first-child')
+    first_option = await first_option.element_handle()
+    await first_option.click()
+
+    await page.get_by_text("Continue", exact=True).click()
+
+    details_box = await remove_top_banner_and_footer(page)
+
+    await page.screenshot(path=output_file, clip=details_box, full_page=True)

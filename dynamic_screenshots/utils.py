@@ -1,3 +1,6 @@
+import datetime
+
+
 def add_margins(box, margin_size):
     box["height"] += 2*margin_size
     box["width"] += 2*margin_size
@@ -40,3 +43,13 @@ async def remove_top_banner_and_footer(page):
     body_box["height"] -= footer_height + top_banner_height
     body_box["y"] += top_banner_height
     return body_box
+
+async def get_date(session_date):
+    day_input = await session_date.query_selector('input[name$="[value(3i)]"]')
+    month_input = await session_date.query_selector('input[name$="[value(2i)]"]')
+    year_input = await session_date.query_selector('input[name$="[value(1i)]"]')
+    day_value = await day_input.get_attribute('value')
+    month_value = await month_input.get_attribute('value')
+    year_value = await year_input.get_attribute('value')
+    date_obj = datetime.datetime(int(year_value), int(month_value), int(day_value))
+    return date_obj

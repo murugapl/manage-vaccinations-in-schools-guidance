@@ -1,6 +1,6 @@
-from process_images import process_consent_matching, process_get_consent, process_get_gillick_competent_consent, process_pre_screening, process_session_no_consent, process_sessions_add_dates, process_school_move_review
+from process_images import process_booking_reminders, process_class_list_year_groups, process_clinic_invitations, process_consent_matching, process_get_consent, process_get_gillick_competent_consent, process_pre_screening, process_session_no_consent, process_sessions_add_dates, process_school_move_review
 
-def create_images(first_session):
+def create_images(first_session, clinic):
     IMAGES = [
         {
             "image_name": "consent-link.png",
@@ -15,7 +15,7 @@ def create_images(first_session):
             "image_name": "consent-response-paper.png",
             "path": f"sessions/session-{first_session}/consent",
             "screen_size": {
-                "width": 900,
+                "width": 1100,
                 "height": 1080
             },
             "further_processing": process_get_consent
@@ -59,8 +59,8 @@ def create_images(first_session):
             "image_name": "programme-triage.png",
             "path": "programmes/hpv/patients",
             "screen_size": {
-                "width": 1200,
-                "height":1080
+                "width": 1000,
+                "height":1200
             },
         },
         {
@@ -90,11 +90,38 @@ def create_images(first_session):
             "further_processing": process_school_move_review
         },
         {
+            "image_name": "send-clinic-invitations-summary.png",
+            "path": f"sessions/session-{first_session+1}",
+            "screen_size": {
+                "width": 1200,
+                "height":1080
+            },
+            "further_processing": process_clinic_invitations
+        },
+        {
+            "image_name": "send-booking-reminders.png",
+            "path": f"sessions/{clinic}",
+            "screen_size": {
+                "width": 1200,
+                "height":1080
+            },
+            "full_page": True,
+        },
+        {
+            "image_name": "send-booking-reminders-summary.png",
+            "path": f"sessions/{clinic}",
+            "screen_size": {
+                "width": 1200,
+                "height":1080
+            },
+            "further_processing": process_booking_reminders
+        },
+        {
             "image_name": "session-attendance.png",
             "path": f"sessions/session-{first_session}/register",
             "screen_size": {
-                "width": 1100,
-                "height": 1080
+                "width": 1000,
+                "height": 1200
             }
         },
         {
@@ -143,7 +170,7 @@ def create_images(first_session):
         },
         {
             "image_name": "session-edit-without-dates.png",
-            "path": f"sessions/session-{first_session}/edit",
+            "path": f"sessions/session-{first_session+2}/edit",
             "screen_size": {
                 "width": 1200,
                 "height":1080
@@ -154,8 +181,8 @@ def create_images(first_session):
             "image_name": "session-no-consent-response.png",
             "path": f"sessions/session-{first_session}/consent",
             "screen_size": {
-                "width": 1200,
-                "height":1080
+                "width": 1000,
+                "height":1200
             },
             "further_processing": process_session_no_consent
         },
@@ -175,6 +202,24 @@ def create_images(first_session):
                 "width": 1200,
                 "height":1080
             },
+        },
+        {
+            "image_name": "import-class-list-year-groups.png",
+            "path": "draft-class-import/session",
+            "screen_size": {
+                "width": 1200,
+                "height":1080
+            },
+            "further_processing": process_class_list_year_groups
+        },
+        {
+            "image_name": "add-session-programmes.png",
+            "path": f"sessions/session-{first_session}/edit/programmes",
+            "screen_size": {
+                "width": 1000,
+                "height":1080
+            },
+            "full_page": True
         },
     ]
     return IMAGES
