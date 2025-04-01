@@ -23,7 +23,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 playwright install
 ```
-Ensure you are on the latest version of Mavis. Reset the database used in your local deployment of the service, by deleting the database `manage_vaccinations_development` and re-running `bin/setup` from the [Mavis](https://github.com/nhsuk/manage-vaccinations-in-schools?tab=readme-ov-file) repo.
+Ensure you are on the latest version of Mavis. Reset the database used in your local deployment of the service, visiting the `/reset` endpoint.
 
 Then run: 
 ```bash
@@ -31,7 +31,7 @@ python dynamic_screenshots/generate_images.py
 ``` 
 The images will be stored in the `app/assets/images` directory.
 
-If it fails with a timeout error, re-run the script. This happens due to temporary database performance issues.
+If it fails with several timeout error, re-run the script. This happens due to temporary database performance issues.
 
 Currently, there is not sufficient logic to generate screenshots of the following:
 * 'Notices' tab ([`notices.png`](app/assets/images/notices.png)) 
