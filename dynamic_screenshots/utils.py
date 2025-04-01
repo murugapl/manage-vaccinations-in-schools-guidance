@@ -21,8 +21,22 @@ async def find_body_box(page):
     body_box = await body.bounding_box()
     return body_box
 
-async def remove_footer(page):
+async def find_top_banner_height(page):
+    top_banner = await page.query_selector(".app-environment")
+    top_banner_box = await top_banner.bounding_box()
+    return top_banner_box["height"]
+
+async def remove_top_banner(page):
+    body_box = await find_body_box(page)
+    top_banner_height = await find_top_banner_height(page)
+    body_box["height"] -= top_banner_height
+    body_box["y"] += top_banner_height
+    return body_box
+
+async def remove_top_banner_and_footer(page):
     body_box = await find_body_box(page)
     footer_height = await find_footer_height(page)
-    body_box["height"] -= footer_height
+    top_banner_height = await find_top_banner_height(page)
+    body_box["height"] -= footer_height + top_banner_height
+    body_box["y"] += top_banner_height
     return body_box
