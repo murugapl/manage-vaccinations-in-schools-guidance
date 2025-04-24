@@ -1,6 +1,6 @@
 ---
-title: Managing users
-group: Setup
+title: Adding users
+group: Getting started
 order: 2
 ---
 
