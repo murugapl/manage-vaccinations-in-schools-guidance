@@ -83,7 +83,7 @@ Use the following template to upload historic vaccination records. You should up
 {{ attachment({
   text: "Vaccination records import template",
   summary: "Microsoft Excel spreadsheet, 18 KB",
-  href: "/files/historic-vaccination-record-import-template.xlsx"
+  href: "/files/historic-vaccination-records-import-template.xlsx"
 }) }}
 
 You should upload historic vaccination records before scheduling school sessions, to ensure that only unvaccinated children are added to a session. (But don’t worry, if you identify that someone is already vaccinated at a later date, you can remove them from the session).
