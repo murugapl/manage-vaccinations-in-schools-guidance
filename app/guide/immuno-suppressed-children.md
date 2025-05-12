@@ -1,7 +1,7 @@
 ---
-title: Handling vaccinations for immuno-suppressed children
-group: Sessions
-order: 35
+title: Vaccinating immuno-suppressed children
+group: Recording vaccinations
+order: 19
 eleventyComputed:
   eleventyNavigation:
     key: Vaccinating immuno-suppressed children

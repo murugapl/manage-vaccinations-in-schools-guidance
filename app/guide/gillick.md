@@ -1,7 +1,7 @@
 ---
-title: To assess Gillick competence
-group: Sessions
-order: 33
+title: Assessing Gillick competence
+group: Recording vaccinations
+order: 17
 eleventyComputed:
   eleventyNavigation:
     key: Gillick assessment

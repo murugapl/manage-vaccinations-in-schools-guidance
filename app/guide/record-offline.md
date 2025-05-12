@@ -1,7 +1,10 @@
 ---
-title: Recording offline
-group: Sessions
-order: 31
+title: Recording vaccinations offline
+group: Recording vaccinations
+order: 21
+eleventyComputed:
+  eleventyNavigation:
+    key: Recording vaccinations offline
 ---
 
 To record vaccinations in Mavis, you need to have internet access. If a reliable internet connection is not available, you should work offline instead.
