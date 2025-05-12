@@ -1,7 +1,7 @@
 ---
-title: Adding class lists
-group: Sessions
-order: 29
+title: Importing class lists
+group: Organising sessions
+order: 8
 ---
 
 [[toc]]
