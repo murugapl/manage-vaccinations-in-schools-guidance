@@ -1,7 +1,7 @@
 ---
 title: Checking consent responses
-group: Consent
-order: 20
+group: Managing consent
+order: 10
 ---
 
 [[toc]]
@@ -11,12 +11,9 @@ Mavis lets you review consent responses for each session.
 1. Go to **Sessions**.
 2. Go to the **Scheduled** tab.
 3. Click the link for the school you’re interested in.
-
-## Checking consent responses
-
-1. Go to the **Consent** tab.
-2. Use the filters to see how many consents, refusals and conflicts you have - a list of children matching the filters you’ve used will display.
-3. Click on a child’s name if you want to see more details about consent for that child.
+4. Go to the **Consent** tab.
+5. Use the filters to see how many consents, refusals and conflicts you have - a list of children matching the filters you’ve used will display.
+6. Click on a child’s name if you want to see more details about consent for that child.
 
 ![Screenshot of consent responses for a session.](/assets/images/session-consent.png 'Mavis shows consent responses for a session grouped by status.')
 
@@ -42,16 +39,6 @@ To review a child changing school, follow the instructions on this page of the u
 
 5. If you believe it is a match, click **Link response with record**.
 6. If you cannot find a match, you can go back to the **Responses** page and click **Create new record** to create a new child record.
-
-## Recording verbal consent from a parent before a session starts
-
-1. From the **Consent** tab of a session page, filter for children with **No response**.
-2. Go into a child record by clicking on their name.
-3. Scroll down and select **Get consent response**.
-4. Use the radio button to indicate who you’re trying to get consent from (you can add a new contact if necessary).
-5. Call the parent.
-6. Record their response.
-7. Check and confirm their answers, and select **Confirm**.
 
 ## Investigating conflicting consent
 
