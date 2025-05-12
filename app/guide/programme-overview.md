@@ -1,10 +1,10 @@
 ---
 title: Programme overview
-group: Programmes
-order: 10
+group: Statistics and reports
+order: 23
 eleventyComputed:
   eleventyNavigation:
-    key: Overview
+    key: Programme overview
 ---
 
 Mavis has an overview page for each vaccination programme that provides simple statistics about the programme such as the number of children in the cohort and the total number of vaccinations performed.
