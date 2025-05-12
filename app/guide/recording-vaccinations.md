@@ -1,7 +1,7 @@
 ---
 title: Recording a vaccination (or non-vaccination)
-group: Sessions
-order: 34
+group: Recording vaccinations
+order: 18
 eleventyComputed:
   eleventyNavigation:
     key: Recording a vaccination
