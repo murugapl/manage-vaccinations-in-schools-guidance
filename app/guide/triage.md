@@ -1,7 +1,7 @@
 ---
 title: Triaging health questions
-group: Consent
-order: 23
+group: Managing triage
+order: 14
 ---
 
 Parents’ responses to health questions can be triaged for each school in a session.
