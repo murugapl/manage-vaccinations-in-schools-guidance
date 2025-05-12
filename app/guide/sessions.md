@@ -1,10 +1,10 @@
 ---
 title: Scheduling and editing sessions
-group: Sessions
-order: 30
+group: Organising sessions
+order: 9
 eleventyComputed:
   eleventyNavigation:
-    key: Scheduling sessions
+    key: Scheduling and editing sessions
 ---
 
 ## Adding programmes to a session
