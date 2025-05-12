@@ -1,12 +1,14 @@
 ---
-title: Inviting children to community clinics
-group: Sessions
-order: 37
+title: Vaccinating in community clinics
+group: Community clinics
+order: 22
 ---
+
+[[toc]]
 
 Any child can be vaccinated at a clinic. Their parent or guardian will need to be invited to book a slot (see below).
 
-## Scheduling community clinics
+## Scheduling sessions in community clinics
 
 To create dates for community clinics:
 
@@ -28,13 +30,19 @@ To add or amend dates for community clinics:
 
 For a child to be vaccinated in a community clinic, their parent or guardian will need to be invited to book an appointment slot through your local booking system.
 
+### If the child is home-schooled or their school is unknown
+
 An invitation email (and potentially a text message) will be sent automatically to the parents or guardians of:
 - home-schooled children
 - children with an unknown school
 
 This will happen 3 weeks before the date of the first scheduled clinic.
 
-To invite children who belong to a school, but were not vaccinated there:
+### If the child belongs to a school but did not get vaccinated there
+
+Some children may have missed being vaccinated at a school session, for example if they were ill or on holiday at the time of the session. 
+
+To send clinic invitations to children who belong to a school, but were not vaccinated there:
 1. Go to **Sessions**
 2. Go to the **Completed** tab
 3. Go to the relevant school session
@@ -45,13 +53,15 @@ To invite children who belong to a school, but were not vaccinated there:
 
 ![Screenshot of clinic invitations summary page from a completed school.](/assets/images/send-clinic-invitations-summary.png)
 
+### Sending booking reminders for clinics
+
 To send booking reminders for subsequent clinics:
 1. Go to **Sessions**
 2. Go to the **Community clinics** link under the **Scheduled** tab
 3. Go to **Send booking reminders**. This will show you a summary of children you can invite again to the next clinic
 4. Click the **Send booking reminders** button
 
-You will only be able to send clinic booking reminders to children that have been invited for a previous clinic, but have still not been vaccinated. You can only send one invitation per child per clinic session date.
+You will only be able to send clinic booking reminders to parents of children that have been invited for a previous clinic, but have still not been vaccinated. You can only send one invitation per child per clinic session date.
 
 ![Screenshot of booking reminders link for community clinics.](/assets/images/send-booking-reminders.png)
 
