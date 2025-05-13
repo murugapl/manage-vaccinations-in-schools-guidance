@@ -1,7 +1,7 @@
 ---
 title: Checking important notices
-group: Setup
-order: 4
+group: Managing cohorts
+order: 6
 eleventyComputed:
   eleventyNavigation:
     key: Important notices

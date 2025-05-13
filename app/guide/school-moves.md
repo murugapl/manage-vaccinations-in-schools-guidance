@@ -1,7 +1,7 @@
 ---
-title: School moves
-group: Setup
-order: 5
+title: Reviewing school moves
+group: Managing cohorts
+order: 7
 eleventyComputed:
   eleventyNavigation:
     key: School moves
