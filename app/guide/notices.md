@@ -19,5 +19,3 @@ Whenever you log in to Mavis, you should go to **Import** and then **Important N
 Records might be flagged as invalid if the child has 2 NHS numbers (if they’re adopted, for example).
 
 If you see that a record has been flagged as sensitive, you need to follow this up with the child’s school and agree how to manage future contact outside Mavis.
-
-You should remove all sensitive and invalid records from the cohort by clicking on the child’s name, scrolling down to **Cohorts** and clicking **Remove from cohort**.
