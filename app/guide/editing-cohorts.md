@@ -22,3 +22,5 @@ Once you have confirmed that the cohort is successfully uploaded, you’re ready
 4. Find the information you want to edit and select **Change**.
 5. Edit the information and select **Continue**.
 6. Select **Save changes**.
+
+![Screenshot of page to edit a child record.](/assets/images/edit-child-record.png)
