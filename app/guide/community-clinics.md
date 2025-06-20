@@ -88,6 +88,6 @@ This will trigger an email to the parent or guardian.
 You could also try to get consent over the phone. To do this:
 
 1. In the **Community clinic** page, go to the **Consent** tab and filter for **No response**.
-2. Click into the child’s record and scroll down.
-3. Click on **Get consent response**.
+2. Click into the child’s record.
+3. Click on **Get verbal consent**.
 4. Phone the parent and work through the consent flow to record their response in Mavis.
