@@ -1,7 +1,7 @@
 ---
 title: Recording vaccinations offline
 group: Recording vaccinations
-order: 21
+order: 22
 eleventyComputed:
   eleventyNavigation:
     key: Recording vaccinations offline

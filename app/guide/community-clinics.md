@@ -1,7 +1,7 @@
 ---
 title: Vaccinating in community clinics
 group: Community clinics
-order: 22
+order: 23
 ---
 
 [[toc]]
@@ -71,7 +71,7 @@ To check whether an invitation email has been sent:
 
 1. Go to the **Consent** tab for a session.
 2. Use the **No response** filter, then click on the name of a child to view the child record.
-3. Click on **Activity log**.
+3. Click on **Session activity and notes**.
 
 ## Getting consent to vaccinate
 
