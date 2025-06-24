@@ -1,7 +1,7 @@
 ---
 title: Downloading vaccination reports
 group: Statistics and reports
-order: 24
+order: 25
 eleventyComputed:
   eleventyNavigation:
     key: Downloading vaccination reports
