@@ -40,6 +40,8 @@ If users are added to the `mavissuperusers` workgroup, they can:
 
 Superusers still need to be assigned to the `schoolagedimmunisations` workgroup and be given a role.
 
+We recommend there are at least 2 superusers per organisation.
+
 ## Removing users
 
 When staff leave your organisation or no longer require Mavis access, remove their access promptly through the Care Identity Management service:
