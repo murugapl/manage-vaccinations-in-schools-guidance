@@ -7,18 +7,36 @@ eleventyComputed:
     key: Recording a vaccination
 ---
 
-To record a vaccination (or a vaccination that didn’t happen):
+To record a vaccination (or a vaccination that didn’t happen), follow the instructions below.
+
+## Select the child and programme
 
 1. Go to **Sessions**.
 2. Go to the **Today** tab.
 3. Click on the name of the school you’re attending.
 4. Click on **Record vaccinations** under the relevant programme.
-5. If you want to, you can filter the list by name or year group.
+5. A list of children’s names is displayed - you can filter the list by name or year group.
 6. Click on the name of the child in front of you.
-7. Once you’ve reviewed the information on the page, run through the pre-screening questions, selecting the relevant check boxes.
-8. Indicate whether you think the child is ready to vaccinate using the radio buttons at the bottom of the page.
+
+{% from "inset-text/macro.njk" import insetText %}
+{{ insetText({
+  html: " If you’re offering more than one vaccination programme at this session, make sure you select the relevant programme tab, near the top of the screen."
+}) }}
+
+![Screenshot of programme tabs on the patient session page.](/assets/images/session-programme-tabs.png)
+
+## Review the child’s details and do pre-screening checks
+
+Once you’ve reviewed the information on the page, you’ll need to confirm the child’s identity and carry out pre-screening checks.
+
+1. Select the relevant radio button to state whether the child or someone else confirmed their identity.
+2. If it was someone else, enter their name and relationship to the child.
+3. Run through the pre-screening checks and confirm you’ve checked the statements are correct. You can add notes if you want to. 
+4. Indicate whether you think the child is ready to vaccinate using the radio buttons at the bottom of the page.
 
 ![Screenshot of pre-screening questions on a patient record.](/assets/images/session-child-pre-screen.png 'Mavis will ask a series of pre-screening questions before you record a vaccination.')
+
+## Record the outcome
 
 If the child was vaccinated:
 
